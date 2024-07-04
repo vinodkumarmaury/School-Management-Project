@@ -1,7 +1,7 @@
 // StudentSignIn.js
 import React, { useState } from 'react';
 import { StudentSignInContainer, FormContainer, InputField, SubmitButton } from '../styles/StudentSignInStyles';
-
+import Nav from './Navbar';
 const StudentSignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,6 +13,8 @@ const StudentSignIn = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <StudentSignInContainer>
       <h2>Student Sign In</h2>
       <FormContainer>
@@ -34,6 +36,8 @@ const StudentSignIn = () => {
         <SubmitButton to="/student/dashboard" onClick={handleSignIn}>Sign In</SubmitButton>
       </FormContainer>
     </StudentSignInContainer>
+    </>
+
   );
 };
 

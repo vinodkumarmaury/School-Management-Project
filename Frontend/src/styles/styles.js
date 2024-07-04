@@ -25,7 +25,6 @@ export const Navbar = styled.nav`
 export const Logo = styled.img`
   width: 50px;
   height: auto;
-
   @media screen and (max-width: 768px) {
     margin-bottom: 10px;
   }
@@ -109,7 +108,7 @@ export const GuestButton = styled.button`
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
   text-align: center;
   background-color:#35363f;
   background-size: cover;
@@ -163,11 +162,11 @@ export const LoremTextContainer = styled.div`
 
 export const AdminRegisterLink = styled(Link)`
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
   margin-top: 10px;
-
+  color:cornsilk;
   &:hover {
     text-decoration: underline;
   }

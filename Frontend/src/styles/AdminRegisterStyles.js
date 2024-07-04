@@ -2,14 +2,15 @@
 import styled from 'styled-components';
 
 export const AdminRegisterContainer = styled.div`
+  margin-top:95px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(45deg, #FF69B4, #FFA07A, #90EE90); /* Gradient background */
-  height: 100vh; /* Full height of the viewport */
+  height: 85.6vh; /* Full height of the viewport */
 `;
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.form` 
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const StudentSignInContainer = styled.div`
+margin-top:95px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(45deg, #FF69B4, #FFA07A, #90EE90); /* Gradient background */
-  min-height: 100vh; /* Full height of the viewport */
+  min-height: 85.6vh; /* Full height of the viewport */
 `;
 
 export const FormContainer = styled.form`

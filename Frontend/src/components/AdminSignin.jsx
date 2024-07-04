@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AdminSignInContainer, FormContainer, InputField, SubmitButton } from '../styles/AdminSignInStyles';
 import axios from 'axios';
-
+import Nav from './Navbar';
 const AdminSignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,6 +24,8 @@ const AdminSignIn = () => {
 //   };
 
   return (
+   <>
+   <Nav/>
     <AdminSignInContainer>
       <h2>Admin Sign In</h2>
       <FormContainer>
@@ -46,6 +48,8 @@ const AdminSignIn = () => {
         >Sign In</SubmitButton>
       </FormContainer>
     </AdminSignInContainer>
+    </>
+
   );
 };
 

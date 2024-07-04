@@ -2,9 +2,11 @@
 import React from 'react';
 import { ChooseUserContainer, UserSection, Title, Button } from '../styles/ChooseUserStyles'; // Import styles
 import { Link } from 'react-router-dom';
-
+import Nav from './Navbar';
 const ChooseUser = () => {
   return (
+    <>
+    <Nav/>
     <ChooseUserContainer>
       <UserSection>
         <Title>Admin</Title>
@@ -19,6 +21,8 @@ const ChooseUser = () => {
         <Button to="/teacher-signIn">Login as Teacher</Button>
       </UserSection>
     </ChooseUserContainer>
+    </>
+
   );
 };
 

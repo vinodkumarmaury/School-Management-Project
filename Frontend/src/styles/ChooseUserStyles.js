@@ -7,8 +7,9 @@ export const ChooseUserContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
-  background-color: #FFD700; /* Playful yellow background color */
+  height: 87vh;
+  margin-top:90px;
+  background-color: rgb(52,53,65); /* Playful yellow background color */
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -20,7 +21,6 @@ export const ChooseUserContainer = styled.div`
 export const UserSection = styled.div`
   text-align: center; /* Center text */
   padding-top: 20px;
-
   @media screen and (min-width: 768px) {
     padding-top: 0;
     margin: 20px;
@@ -32,7 +32,7 @@ export const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #FF4500; /* Admin: Orange color */
+    color:gold; 
 
   @media screen and (max-width: 768px) {
     font-size: 20px;
@@ -40,7 +40,7 @@ export const Title = styled.h2`
 `;
 
 export const Button = styled(Link)`
-  background-color: #90EE90; /* Student: Light green color */
+  background-color:blueviolet;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -51,7 +51,7 @@ export const Button = styled(Link)`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #7CFC00; /* Darker shade of green on hover */
+    background-color: rgb(204, 50, 171); 
   }
 
   @media screen and (max-width: 768px) {
