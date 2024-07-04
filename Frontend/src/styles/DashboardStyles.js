@@ -75,5 +75,6 @@ margin-top:95px;
 export const TeacherDashboardContainer = styled.div`
   display: flex;
   padding-left: 240px;
+  margin-top:95px;
 `;
 

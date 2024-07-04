@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import axios from 'axios';
 import { StudentsContainer, Content, StudentsContent, StudentsHeader, StudentList, StudentItem, AddStudentForm, AddStudentInput, 
   AddStudentButton } from '../../styles/StudentsStyles';
-
+import Nav from '../../components/Navbar';
 const StudentSection = () => {
   const [newStudent, setNewStudent] = useState({ name: '', registrationNumber: '', grade: '' });
   const [students, setStudents] = useState([]);
@@ -23,6 +23,9 @@ const StudentSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
+    
     <StudentsContainer>
       <Sidebar />
       <Content>
@@ -36,6 +39,7 @@ const StudentSection = () => {
         </StudentsContent>
       </Content>
     </StudentsContainer>
+    </>
   );
 };
 

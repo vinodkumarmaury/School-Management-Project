@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import { ProfileContainer, SidebarContainer, Content, ProfileHeader, ProfileDetails, ProfileLabel, ProfileInfo, EditButton } 
 from '../../styles/SettingsProfileStyles'; 
-
+import Nav from '../../components/Navbar';
 const TeacherProfileSection = () => {
   const [teacherInfo, setTeacherInfo] = useState({
     name: 'John Doe',
@@ -14,6 +14,8 @@ const TeacherProfileSection = () => {
   });
 
   return (
+    <>
+    <Nav/>
     <ProfileContainer>
       <SidebarContainer>
         <Sidebar />
@@ -35,6 +37,7 @@ const TeacherProfileSection = () => {
         <EditButton>Edit Profile</EditButton>
       </Content>
     </ProfileContainer>
+    </>
   );
 };
 

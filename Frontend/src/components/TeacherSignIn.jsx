@@ -1,7 +1,7 @@
 // TeacherSignIn.js
 import React, { useState } from 'react';
 import { TeacherSignInContainer, FormContainer, InputField, SubmitButton } from '../styles/TeacherSignInStyles';
-import Nav from './Navbar';
+import Nav from './Navbar.jsx';
 const TeacherSignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

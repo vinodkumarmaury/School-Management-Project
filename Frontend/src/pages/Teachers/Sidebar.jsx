@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'; 
-import { BsGraphUp, BsPeople, BsPerson, BsFileText, BsBook, BsGraphDown, BsCalendar, BsGear, BsChatDots, BsCalendarEvent, BsQuestionSquare } from 'react-icons/bs';
+import { BsGraphUp, BsPeople, BsPerson, BsFileText, BsBook, BsGraphDown, BsCalendar, BsGear, BsChatDots, BsCalendarEvent } from 'react-icons/bs';
 
 const SidebarContainer = styled.div`
   position: fixed;
-  top: 0;
   left: 0;
   width: ${({ isOpen }) => (isOpen ? '250px' : '80px')};
-  width: 250px;
-  height: 100%;
-  background-color: #2c3e50; /* Dark blue background */
+  height: 100vh;
+  background-color: #2c3e50;
   color: white;
-  overflow-y: auto; /* Enable vertical scrolling */
-  padding-top: 60px;
-  transition: width 0.3s ease; /* Smooth width transition */
-  z-index: 100; /* Ensure sidebar stays above content */
+  transition: width 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
 `;
 
 const SidebarHeader = styled.div`
@@ -23,6 +21,12 @@ const SidebarHeader = styled.div`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+`;
+
+const SidebarContent = styled.div`
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 60px;
 `;
 
 const SidebarNav = styled.ul`
@@ -35,10 +39,10 @@ const SidebarNavItem = styled.li`
   align-items: center;
   padding: 12px 20px;
   font-size: 18px;
-  border-bottom: 1px solid #34495e; /* Darker border */
+  border-bottom: 1px solid #34495e;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: #34495e; /* Darker background on hover */
+    background-color: #34495e;
   }
 `;
 
@@ -58,17 +62,15 @@ const Logo = styled.img`
 `;
 
 const ToggleButton = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 0;
   width: 30px;
   height: 30px;
-  background-color: #34495e; /* Darker background */
+  background-color: #34495e;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px auto;
 `;
 
 const ToggleIcon = styled.span`
@@ -84,62 +86,63 @@ const Sidebar = () => {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-   
+
   return (
-    <SidebarContainer style={{ width: isOpen ? '250px' : '80px' }}>
-        <SidebarHeader>
+    <SidebarContainer isOpen={isOpen}>
+      <SidebarHeader>
         <Logo src={"../assets/bg1.png"} alt="Logo" />
       </SidebarHeader>
       <SidebarHeader>Teacher</SidebarHeader>
-      <SidebarNav>
-        <SidebarNavItem>
-          <SidebarIcon><BsGraphUp /></SidebarIcon>
-          <StyledLink to="/teacher/dashboard">Dashboard</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsPeople /></SidebarIcon>
-          <StyledLink to="/teacher/classes">Classes</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsPeople /></SidebarIcon>
-          <StyledLink to="/teacher/students">Students</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsPerson /></SidebarIcon>
-          <StyledLink to="/teacher/teachers">Teachers</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsFileText /></SidebarIcon>
-          <StyledLink to="/teacher/assignments">Assignments</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsBook /></SidebarIcon>
-          <StyledLink to="/teacher/exams">Exams</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsGraphDown /></SidebarIcon>
-          <StyledLink to="/teacher/performance">Performance</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsCalendar /></SidebarIcon>
-          <StyledLink to="/teacher/attendance">Attendance</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsChatDots /></SidebarIcon>
-          <StyledLink to="/teacher/communication">Announcement</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsCalendarEvent /></SidebarIcon>
-          <StyledLink to="/teacher/events">Events & Calendar</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsGear /></SidebarIcon>
-          <StyledLink to="/teacher/settings">Settings & Profile</StyledLink>
-        </SidebarNavItem>
-        
-      </SidebarNav>
+      <SidebarContent>
+        <SidebarNav>
+          <SidebarNavItem>
+            <SidebarIcon><BsGraphUp /></SidebarIcon>
+            <StyledLink to="/teacher/dashboard">Dashboard</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsPeople /></SidebarIcon>
+            <StyledLink to="/teacher/classes">Classes</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsPeople /></SidebarIcon>
+            <StyledLink to="/teacher/students">Students</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsPerson /></SidebarIcon>
+            <StyledLink to="/teacher/teachers">Teachers</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsFileText /></SidebarIcon>
+            <StyledLink to="/teacher/assignments">Assignments</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsBook /></SidebarIcon>
+            <StyledLink to="/teacher/exams">Exams</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsGraphDown /></SidebarIcon>
+            <StyledLink to="/teacher/performance">Performance</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsCalendar /></SidebarIcon>
+            <StyledLink to="/teacher/attendance">Attendance</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsChatDots /></SidebarIcon>
+            <StyledLink to="/teacher/communication">Announcement</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsCalendarEvent /></SidebarIcon>
+            <StyledLink to="/teacher/events">Events & Calendar</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsGear /></SidebarIcon>
+            <StyledLink to="/teacher/settings">Settings & Profile</StyledLink>
+          </SidebarNavItem>
+        </SidebarNav>
+      </SidebarContent>
       <ToggleButton onClick={toggleSidebar}>
-        <ToggleIcon isOpen={isOpen}>▲</ToggleIcon>
+        <ToggleIcon isOpen={isOpen}>{isOpen ? '▲' : '▼'}</ToggleIcon>
       </ToggleButton>
     </SidebarContainer>
   );

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar';
 import { EventCalendarContainer, Content, CalendarContainer, Events, Event, AddEventForm, EventInput, AddEventButton, ErrorText } 
 from '../../styles/EventCalendarStyles'; 
-
+import Nav from '../../components/Navbar';
 const EventSection = () => {
   const [events, setEvents] = useState([]);
   const [newEvent, setNewEvent] = useState('');
@@ -45,6 +45,8 @@ const EventSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <EventCalendarContainer>
       <Sidebar />
       <Content>
@@ -74,6 +76,7 @@ const EventSection = () => {
         </Events>
       </Content>
     </EventCalendarContainer>
+    </>
   );
 };
 export default EventSection;

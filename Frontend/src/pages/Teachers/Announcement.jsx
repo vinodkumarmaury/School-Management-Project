@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar';
 import { AnnouncementContainer, Content, Title, AnnouncementForm, FormGroup, Label, TextArea, Button, AnnouncementList, AnnouncementItem, 
   AnnouncementContent } from '../../styles/AnnouncementStyles';
-
+import Nav from '../../components/Navbar';
 const CheckAnnouncementSection = () => {
   const [announcement, setAnnouncement] = useState('');
   const [announcements, setAnnouncements] = useState([]);
@@ -39,6 +39,8 @@ const CheckAnnouncementSection = () => {
   };
 
   return (
+    <>
+  <Nav/>
     <AnnouncementContainer>
       <Sidebar />
       <Content>
@@ -68,6 +70,7 @@ const CheckAnnouncementSection = () => {
         </AnnouncementList>
       </Content>
     </AnnouncementContainer>
+    </>
   );
 };
 

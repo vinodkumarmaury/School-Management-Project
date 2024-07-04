@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar';
 import { ExamContainer, SidebarContainer, Content, ExamHeader, ExamForm, FormLabel, FormInput, AddButton } 
 from '../../styles/ExamStyles'; 
-
+import Nav from '../../components/Navbar';
 const CheckExamSection = () => {
   const [examData, setExamData] = useState([]);
   const [name, setName] = useState('');
@@ -49,6 +49,8 @@ const CheckExamSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <ExamContainer>
       <SidebarContainer>
         <Sidebar />
@@ -97,6 +99,7 @@ const CheckExamSection = () => {
         </ul>
       </Content>
     </ExamContainer>
+    </>
   );
 };
 

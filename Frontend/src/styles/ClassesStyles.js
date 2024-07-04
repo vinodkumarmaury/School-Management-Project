@@ -60,6 +60,7 @@ export const AddClassButton = styled.button`
 
 export const ClassContainer = styled.div`
   display: flex;
+  margin-top : 95px;
 `;
 
 export const SidebarContainer = styled.div`

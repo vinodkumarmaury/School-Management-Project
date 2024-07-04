@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar';
 import { ClassContainer, SidebarContainer, Content, ClassHeader, ClassList, ClassItem } 
 from '../../styles/ClassesStyles'; 
-
+import Nav from '../../components/Navbar';
 
 const ClassSection = () => {
   const [classes, setClasses] = useState([]);
@@ -27,6 +27,8 @@ const ClassSection = () => {
   };
 
   return (
+    <>
+  <Nav/>
     <ClassContainer>
       <SidebarContainer>
         <Sidebar />
@@ -42,6 +44,7 @@ const ClassSection = () => {
         </ClassList>
       </Content>
     </ClassContainer>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import { PerformanceContainer, Content, PerformanceContent, PerformanceHeader, SchoolPerformance, IndividualPerformance } 
 from '../../styles/PerformanceStyles'; 
-
+import Nav from '../../components/Navbar';
 const CheckPerformanceSection = () => {
   // Sample data for school performance
   const schoolPerformanceData = {
@@ -19,6 +19,8 @@ const CheckPerformanceSection = () => {
   ];
 
   return (
+    <>
+    <Nav/>
     <PerformanceContainer>
       <Sidebar />
       <Content>
@@ -39,6 +41,7 @@ const CheckPerformanceSection = () => {
         </PerformanceContent>
       </Content>
     </PerformanceContainer>
+    </>
   );
 };
 

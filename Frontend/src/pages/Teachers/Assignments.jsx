@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar';
 import { AssignmentsContainer, Content, AssignmentsContent, AssignmentsHeader, AssignmentList, AssignmentItem, AddAssignmentForm, 
   AddAssignmentInput, AddAssignmentTextArea, AddAssignmentButton } from '../../styles/AssignmentsStyles'; 
-
+import Nav from '../../components/Navbar';
 const AssignmentSection = () => {
   const [newAssignment, setNewAssignment] = useState({ title: '', description: '', grade: '', deadline: '' });
   const [assignments, setAssignments] = useState([]);
@@ -36,6 +36,8 @@ const AssignmentSection = () => {
   };
 
   return (
+    <>
+  <Nav/>
     <AssignmentsContainer>
       <Sidebar />
       <Content>
@@ -78,6 +80,7 @@ const AssignmentSection = () => {
         </AssignmentsContent>
       </Content>
     </AssignmentsContainer>
+    </>
   );
 };
 

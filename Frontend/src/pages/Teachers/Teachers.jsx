@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import axios from 'axios';
 import { TeachersContainer, Content, TeachersContent, TeachersHeader, TeacherList, TeacherItem, AddTeacherForm, AddTeacherInput, 
   AddTeacherButton } from '../../styles/TeachersStyles';
-
+import Nav from '../../components/Navbar';
 const TeacherSection = () => {
   const [newTeacher, setNewTeacher] = useState({ name: '', email: '', subject: '' });
   const [teachers, setTeachers] = useState([]);
@@ -23,6 +23,8 @@ const TeacherSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <TeachersContainer>
       <Sidebar />
       <Content>
@@ -36,6 +38,7 @@ const TeacherSection = () => {
         </TeachersContent>
       </Content>
     </TeachersContainer>
+    </>
   );
 };
 

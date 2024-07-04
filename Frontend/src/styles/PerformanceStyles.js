@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const PerformanceContainer = styled.div`
   display: flex;
   margin-top:95px;
+  margin-left:18%;
 `;
 
 export const Content = styled.div`

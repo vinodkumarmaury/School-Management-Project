@@ -3,9 +3,12 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import { TeacherDashboardContainer, Content, Section, SectionTitle, CardContainer, Card, CardTitle, CardContent } 
 from '../../styles/DashboardStyles';
-
+import Nav from '../../components/Navbar';
 const TeacherDashboard = () => {
+  
   return (
+    <>
+  <Nav/>
     <TeacherDashboardContainer>
       <Sidebar />
       <Content>
@@ -40,6 +43,7 @@ const TeacherDashboard = () => {
         {/* Add more sections for other parts of the admin dashboard */}
       </Content>
     </TeacherDashboardContainer>
+  </>
   );
 };
 

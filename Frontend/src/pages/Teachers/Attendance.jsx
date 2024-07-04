@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar';
 import { AttendanceContainer, Content, AttendanceContent, AttendanceHeader, AttendanceList, AttendanceItem, StudentName, 
   CheckboxLabel, Divider, SubmitButton } from '../../styles/AttendanceStyles'; 
-
+import Nav from '../../components/Navbar';
 const CheckAttendanceSection = () => {
   const [students, setStudents] = useState([]);
   const [attendanceData, setAttendanceData] = useState([]);
@@ -54,6 +54,8 @@ const CheckAttendanceSection = () => {
   };
 
   return (
+    <>
+  <Nav/>
     <AttendanceContainer>
       <Sidebar />
       <Content>
@@ -97,6 +99,7 @@ const CheckAttendanceSection = () => {
         </AttendanceContent>
       </Content>
     </AttendanceContainer>
+    </>
   );
 };
 
