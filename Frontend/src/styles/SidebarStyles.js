@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export const SidebarContainer = styled.div`
   position: fixed;
-  top: 0;
   left: 0;
   width: ${({ isOpen }) => (isOpen ? '250px' : '80px')};
   width: 250px;

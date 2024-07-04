@@ -11,7 +11,7 @@ import {
   Label,
   Value,
 } from '../../styles/SettingsProfileStyles'; // Import styled components from ProfileSectionStyles.js
-
+import Nav from '../../components/Navbar';
 const ProfileSection = () => {
   // Sample student profile data
   const studentProfile = {
@@ -23,6 +23,8 @@ const ProfileSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <ProfileContainer>
       <SidebarContainer>
         <Sidebar />
@@ -53,6 +55,7 @@ const ProfileSection = () => {
         </ProfileInfo>
       </Content>
     </ProfileContainer>
+        </>
   );
 };
 

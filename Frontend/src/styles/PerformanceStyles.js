@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const PerformanceContainer = styled.div`
   display: flex;
+  margin-top:95px;
 `;
 
 export const Content = styled.div`

@@ -11,6 +11,7 @@ import {
   ExamResult,
   ExamChartContainer,
 } from '../../styles/ExamStyles'; 
+import Nav from '../../components/Navbar';
 
 const ExamSection = () => {
   const chartRef = useRef(null);
@@ -49,6 +50,8 @@ const ExamSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <ExamContainer>
       <SidebarContainer>
         <Sidebar />
@@ -72,6 +75,8 @@ const ExamSection = () => {
         </ExamResultsContainer>
       </Content>
     </ExamContainer>
+    </>
+
   );
 };
 

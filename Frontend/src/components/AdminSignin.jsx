@@ -43,7 +43,7 @@ const AdminSignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         /> 
-        <SubmitButton 
+        <SubmitButton to = "/admin/dashboard"
         // onClick={handleSignIn}
         >Sign In</SubmitButton>
       </FormContainer>

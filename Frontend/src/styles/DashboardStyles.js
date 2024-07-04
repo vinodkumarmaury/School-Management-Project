@@ -66,6 +66,7 @@ export const CardContent = styled.p`
 `;
 
 export const StudentDashboardContainer = styled.div`
+margin-top:95px;
   display: flex;
   padding-left: 240px;
 `;

@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import { AttendanceContainer, SidebarContainer, Content, AttendanceHeader, AttendanceList, AttendanceItem, 
   AttendanceDate, AttendanceStatus } 
   from '../../styles/AttendanceStyles'; 
+import Nav from '../../components/Navbar';
 
 const AttendanceSection = () => {
   // Sample attendance data
@@ -16,6 +17,8 @@ const AttendanceSection = () => {
   ];
 
   return (
+    <>
+    <Nav/>
     <AttendanceContainer>
       <SidebarContainer>
         <Sidebar />
@@ -32,6 +35,7 @@ const AttendanceSection = () => {
         </AttendanceList>
       </Content>
     </AttendanceContainer>
+    </>
   );
 };
 

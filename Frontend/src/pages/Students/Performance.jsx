@@ -11,7 +11,7 @@ import {
   PerformanceGraphContainer,
   TotalMarks,
 } from '../../styles/PerformanceStyles'; // Import styled components from PerformanceSectionStyles.js
-
+import Nav from '../../components/Navbar';
 const PerformanceSection = () => {
   // Sample performance data
   const performanceData = {
@@ -36,6 +36,8 @@ const PerformanceSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <PerformanceContainer>
       <SidebarContainer>
         <Sidebar />
@@ -61,6 +63,7 @@ const PerformanceSection = () => {
         </PerformanceInfo>
       </Content>
     </PerformanceContainer>
+    </>
   );
 };
 

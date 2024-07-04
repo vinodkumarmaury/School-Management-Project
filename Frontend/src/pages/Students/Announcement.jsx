@@ -12,7 +12,7 @@ import {
   AnnouncementTitle,
   AnnouncementContent,
 } from '../../styles/AnnouncementStyles'; 
-
+import Nav from '../../components/Navbar';
 const AnnouncementSection = () => {
   const [announcements, setAnnouncements] = useState([]);
 
@@ -30,6 +30,8 @@ const AnnouncementSection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <AnnouncementContainer>
       <SidebarContainer>
         <Sidebar />
@@ -45,6 +47,7 @@ const AnnouncementSection = () => {
         </AnnouncementList>
       </Content>
     </AnnouncementContainer>
+    </>
   );
 };
 

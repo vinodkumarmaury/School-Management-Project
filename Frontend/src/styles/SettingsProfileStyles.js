@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const ProfileContainer = styled.div`
   display: flex;
+  margin-top:95px;
 `;
 
 export const SidebarContainer = styled.div`

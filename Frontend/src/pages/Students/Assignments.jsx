@@ -12,7 +12,7 @@ import {
   AssignmentButton,
   AssignmentDoneMessage,
 } from '../../styles/AssignmentsStyles'; // Import styled components from AssignmentStyles.js
-
+import Nav from '../../components/Navbar';
 const StudentAssignments = () => {
   const [assignments, setAssignments] = useState([]);
 
@@ -34,6 +34,8 @@ const StudentAssignments = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <AssignmentsContainer>
       <SidebarContainer>
         <Sidebar />
@@ -53,6 +55,7 @@ const StudentAssignments = () => {
         ))}
       </Content>
     </AssignmentsContainer>
+        </>
   );
 };
 

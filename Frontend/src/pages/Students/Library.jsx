@@ -12,7 +12,7 @@ import {
   BookTitle,
   BorrowButton,
 } from '../../styles/LibraryStyles';
-
+import Nav from '../../components/Navbar';
 const LibrarySection = () => {
   const [books, setBooks] = useState([]);
 
@@ -35,6 +35,8 @@ const LibrarySection = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <LibraryContainer>
       <SidebarContainer>
         <Sidebar />
@@ -52,6 +54,7 @@ const LibrarySection = () => {
         </BookList>
       </Content>
     </LibraryContainer>
+    </>
   );
 };
 
