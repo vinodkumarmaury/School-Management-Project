@@ -21,7 +21,7 @@ const Exam = () => {
   const [marks, setMarks] = useState('');
 
   useEffect(() => {
-    fetchExams();
+    // fetchExams();
   }, []);
 
   const fetchExams = async () => {
@@ -41,7 +41,7 @@ const Exam = () => {
     e.preventDefault();
     const newExam = { name, registrationNumber, className, marks: parseInt(marks) };
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/exam', newExam);
+      const response = await axios.post('http://localhost:4000/api/v1/exam', newExam); 
       // Ensure response data is always an object
       if (typeof response.data === 'object') {
         setExamData([...examData, response.data]);

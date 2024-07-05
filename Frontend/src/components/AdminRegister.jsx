@@ -6,22 +6,22 @@ const AdminRegister = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-//   const handleRegister = async (e) => {
-//     e.preventDefault(); // Prevent default form submission
+  const handleRegister = async (e) => {
+    e.preventDefault(); // Prevent default form submission
   
-//     try {
-//       const response = await axios.post('http://localhost:4000/api/v1/register/admin', { email, password }); 
-//       if (response.status === 200) {
-//         // Registration successful, redirect to admin login
-//         window.location.href = '/admin-signIn';
-//       } else {
-//         // Handle registration errors
-//         console.error('Registration failed');
-//       }
-//     } catch (error) {
-//       console.error('Error during registration:', error);
-//     }
-//   };
+    try {
+      const response = await axios.post('http://localhost:4000/api/v1/register/admin', { email, password }); 
+      if (response.status === 200) {
+        // Registration successful, redirect to admin login
+        window.location.href = '/admin-signIn';
+      } else {
+        // Handle registration errors
+        console.error('Registration failed');
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+    }
+  };
    
 
   return (

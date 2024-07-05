@@ -39,7 +39,7 @@ const Students = () => {
         setStudents([...students, response.data.student]);
         setNewStudent({ name: '', registrationNumber: '', grade: '' });
       } catch (error) {
-        console.error('Error adding student:', error);
+        console.error('Error adding student:', error); 
       }
     }
   };

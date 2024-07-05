@@ -76,7 +76,7 @@ const Classes = () => {
           <ClassList>
             {/* Ensure that classes is an array before mapping over it */}
             {Array.isArray(classes) && classes.map((classItem, index) => (
-              <ClassItem key={index}>{classItem.grade}</ClassItem>
+              <ClassItem key={index}>Class:{classItem.grade}</ClassItem>
             ))}
           </ClassList>
         </ClassesContent>
