@@ -13,7 +13,7 @@ import {
   AddClassInput,
   AddClassButton,
 } from '../../styles/ClassesStyles';
-
+import Nav from '../../components/Navbar';
 const Classes = () => {
   const [newClassName, setNewClassName] = useState('');
   const [classes, setClasses] = useState([]);
@@ -57,6 +57,8 @@ const Classes = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <ClassesContainer>
       <Sidebar />
       <Content>
@@ -80,6 +82,7 @@ const Classes = () => {
         </ClassesContent>
       </Content>
     </ClassesContainer>
+    </>
   );
 };
 

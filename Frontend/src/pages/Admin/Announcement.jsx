@@ -16,7 +16,7 @@ import {
   AnnouncementItem,
   AnnouncementContent,
 } from '../../styles/AnnouncementStyles';
-
+import Nav from '../../components/Navbar';
 const Announcement = () => {
   // State for managing announcement
   const [announcement, setAnnouncement] = useState('');
@@ -58,6 +58,8 @@ const Announcement = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <AnnouncementContainer>
       <ToastContainer />
       <Sidebar />
@@ -90,6 +92,7 @@ const Announcement = () => {
         </AnnouncementList>
       </Content>
     </AnnouncementContainer>
+    </>
   );
 };
 

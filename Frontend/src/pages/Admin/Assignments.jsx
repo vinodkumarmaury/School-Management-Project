@@ -15,7 +15,7 @@ import {
   AddAssignmentTextArea,
   AddAssignmentButton,
 } from '../../styles/AssignmentsStyles';
-
+import Nav from "../../components/Navbar.jsx"
 const Assignments = () => {
   const [newAssignment, setNewAssignment] = useState({ title: '', description: '', grade: '', deadline: '' });
   const [assignments, setAssignments] = useState([]);
@@ -53,6 +53,8 @@ const Assignments = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <AssignmentsContainer>
       <ToastContainer />
       <Sidebar />
@@ -96,6 +98,7 @@ const Assignments = () => {
         </AssignmentsContent>
       </Content>
     </AssignmentsContainer>
+    </>
   );
 };
 

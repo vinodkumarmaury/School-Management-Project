@@ -9,7 +9,7 @@ import {
   SchoolPerformance,
   IndividualPerformance,
 } from '../../styles/PerformanceStyles'; 
-
+import Nav from '../../components/Navbar';
 const Performance = () => {
   // Sample data for school performance
   const schoolPerformanceData = {
@@ -25,6 +25,8 @@ const Performance = () => {
   ];
 
   return (
+    <>
+    <Nav/>
     <PerformanceContainer>
       <Sidebar /> {/* Include the Sidebar component */}
       <Content>
@@ -45,6 +47,7 @@ const Performance = () => {
         </PerformanceContent>
       </Content>
     </PerformanceContainer>
+    </>
   );
 };
 

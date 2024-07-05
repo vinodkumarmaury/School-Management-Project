@@ -13,7 +13,7 @@ import {
   AddEventButton,
   ErrorText,
 } from '../../styles/EventCalendarStyles';
-
+import Nav from '../../components/Navbar';
 const EventCalendar = () => {
   const [events, setEvents] = useState([]);
   const [newEvent, setNewEvent] = useState('');
@@ -54,6 +54,8 @@ const EventCalendar = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <EventCalendarContainer>
       <Sidebar />
       <Content>
@@ -83,6 +85,7 @@ const EventCalendar = () => {
         </Events>
       </Content>
     </EventCalendarContainer>
+    </>
   );
 };
 

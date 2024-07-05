@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { BsGraphUp, BsPeople, BsPerson, BsFileText, BsBook, BsGraphDown, BsCalendar, BsGear, BsChatDots, BsCalendarEvent } from 'react-icons/bs';
 
 const SidebarContainer = styled.div`
@@ -14,6 +14,7 @@ const SidebarContainer = styled.div`
   z-index: 100;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const SidebarHeader = styled.div`
@@ -26,7 +27,6 @@ const SidebarHeader = styled.div`
 const SidebarContent = styled.div`
   flex-grow: 1;
   overflow-y: auto;
-  padding-top: 60px;
 `;
 
 const SidebarNav = styled.ul`
@@ -50,6 +50,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
   margin-left: 10px;
+  display: ${({ isOpen }) => (isOpen ? 'inline' : 'none')};
 `;
 
 const SidebarIcon = styled.div`
@@ -57,8 +58,9 @@ const SidebarIcon = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 50px;
+  width: ${({ isOpen }) => (isOpen ? '50px' : '30px')};
   height: auto;
+  transition: width 0.3s ease;
 `;
 
 const ToggleButton = styled.div`
@@ -90,59 +92,59 @@ const Sidebar = () => {
   return (
     <SidebarContainer isOpen={isOpen}>
       <SidebarHeader>
-        <Logo src={"../assets/bg1.png"} alt="Logo" />
+        <Logo src={"../assets/bg1.png"} alt="Logo" isOpen={isOpen} />
       </SidebarHeader>
-      <SidebarHeader>Teacher</SidebarHeader>
+      <SidebarHeader>{isOpen ? 'Teacher' : 'T'}</SidebarHeader>
       <SidebarContent>
         <SidebarNav>
           <SidebarNavItem>
             <SidebarIcon><BsGraphUp /></SidebarIcon>
-            <StyledLink to="/teacher/dashboard">Dashboard</StyledLink>
+            <StyledLink to="/teacher/dashboard" isOpen={isOpen}>Dashboard</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsPeople /></SidebarIcon>
-            <StyledLink to="/teacher/classes">Classes</StyledLink>
+            <StyledLink to="/teacher/classes" isOpen={isOpen}>Classes</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsPeople /></SidebarIcon>
-            <StyledLink to="/teacher/students">Students</StyledLink>
+            <StyledLink to="/teacher/students" isOpen={isOpen}>Students</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsPerson /></SidebarIcon>
-            <StyledLink to="/teacher/teachers">Teachers</StyledLink>
+            <StyledLink to="/teacher/teachers" isOpen={isOpen}>Teachers</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsFileText /></SidebarIcon>
-            <StyledLink to="/teacher/assignments">Assignments</StyledLink>
+            <StyledLink to="/teacher/assignments" isOpen={isOpen}>Assignments</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsBook /></SidebarIcon>
-            <StyledLink to="/teacher/exams">Exams</StyledLink>
+            <StyledLink to="/teacher/exams" isOpen={isOpen}>Exams</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsGraphDown /></SidebarIcon>
-            <StyledLink to="/teacher/performance">Performance</StyledLink>
+            <StyledLink to="/teacher/performance" isOpen={isOpen}>Performance</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsCalendar /></SidebarIcon>
-            <StyledLink to="/teacher/attendance">Attendance</StyledLink>
+            <StyledLink to="/teacher/attendance" isOpen={isOpen}>Attendance</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsChatDots /></SidebarIcon>
-            <StyledLink to="/teacher/communication">Announcement</StyledLink>
+            <StyledLink to="/teacher/communication" isOpen={isOpen}>Announcement</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsCalendarEvent /></SidebarIcon>
-            <StyledLink to="/teacher/events">Events & Calendar</StyledLink>
+            <StyledLink to="/teacher/events" isOpen={isOpen}>Events & Calendar</StyledLink>
           </SidebarNavItem>
           <SidebarNavItem>
             <SidebarIcon><BsGear /></SidebarIcon>
-            <StyledLink to="/teacher/settings">Settings & Profile</StyledLink>
+            <StyledLink to="/teacher/settings" isOpen={isOpen}>Settings & Profile</StyledLink>
           </SidebarNavItem>
         </SidebarNav>
       </SidebarContent>
       <ToggleButton onClick={toggleSidebar}>
-        <ToggleIcon isOpen={isOpen}>{isOpen ? '▲' : '▼'}</ToggleIcon>
+        <ToggleIcon isOpen={isOpen}>▲</ToggleIcon>
       </ToggleButton>
     </SidebarContainer>
   );

@@ -12,7 +12,7 @@ import {
   FormInput,
   AddButton,
 } from '../../styles/ExamStyles';
-
+import Nav from '../../components/Navbar';
 const Exam = () => {
   const [examData, setExamData] = useState([]);
   const [name, setName] = useState('');
@@ -66,6 +66,8 @@ const Exam = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <ExamContainer>
       <SidebarContainer>
         <Sidebar />
@@ -114,6 +116,7 @@ const Exam = () => {
         </ul>
       </Content>
     </ExamContainer>
+    </>
   );
 };
 

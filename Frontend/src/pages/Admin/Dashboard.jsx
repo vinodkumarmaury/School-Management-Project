@@ -17,7 +17,7 @@ import {
   CardTitle,
   CardContent,
 } from '../../styles/DashboardStyles';
-
+import Nav from '../../components/Navbar';
 const AdminDashboard = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [events, setEvents] = useState([]);
@@ -58,6 +58,8 @@ const AdminDashboard = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <AdminDashboardContainer>
       <Sidebar />
       <Content isOpen={isOpen}>
@@ -91,6 +93,7 @@ const AdminDashboard = () => {
         </BottomContent>
       </Content>
     </AdminDashboardContainer>
+    </>
   );
 };
 

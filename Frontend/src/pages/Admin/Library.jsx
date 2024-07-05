@@ -17,7 +17,7 @@ import {
   BookAuthor,
   ActionButton,
 } from '../../styles/LibraryStyles';
-
+import Nav from '../../components/Navbar';
 const Library = () => {
   const [books, setBooks] = useState([]);
 
@@ -55,6 +55,8 @@ const Library = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <LibraryContainer>
       <Sidebar />
       <Content>
@@ -96,6 +98,7 @@ const Library = () => {
         </BookList>
       </Content>
     </LibraryContainer>
+    </>
   );
 };
 

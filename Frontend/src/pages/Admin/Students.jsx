@@ -13,7 +13,7 @@ import {
   AddStudentInput,
   AddStudentButton,
 } from '../../styles/StudentsStyles'; 
-
+import Nav from '../../components/Navbar';
 const Students = () => {
   const [newStudent, setNewStudent] = useState({ name: '', registrationNumber: '', grade: '' });
   const [students, setStudents] = useState([]);
@@ -45,6 +45,8 @@ const Students = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <StudentsContainer>
       <Sidebar />
       <Content>
@@ -79,6 +81,7 @@ const Students = () => {
         </StudentsContent>
       </Content>
     </StudentsContainer>
+    </>
   );
 };
 

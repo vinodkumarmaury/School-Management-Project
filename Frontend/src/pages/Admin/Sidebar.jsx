@@ -5,17 +5,15 @@ import { BsGraphUp, BsPeople, BsPerson, BsFileText, BsBook, BsGraphDown, BsCalen
 
 const SidebarContainer = styled.div`
   position: fixed;
-  top: 0;
   left: 0;
   width: ${({ isOpen }) => (isOpen ? '250px' : '80px')};
-  width: 250px;
   height: 100%;
   background-color: #2c3e50; /* Dark blue background */
   color: white;
-  overflow-y: auto; /* Enable vertical scrolling */
   padding-top: 60px;
   transition: width 0.3s ease; /* Smooth width transition */
   z-index: 100; /* Ensure sidebar stays above content */
+  overflow-y: auto; /* Enable vertical scrolling */
 `;
 
 const SidebarHeader = styled.div`
@@ -23,6 +21,11 @@ const SidebarHeader = styled.div`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+`;
+
+const SidebarNavContainer = styled.div`
+  height: calc(100vh - 60px); /* Adjust height to fit viewport minus header */
+  overflow-y: auto; /* Enable vertical scrolling */
 `;
 
 const SidebarNav = styled.ul`
@@ -81,68 +84,70 @@ const ToggleIcon = styled.span`
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleSidebar = () => {
+  //   setIsOpen(!isOpen);
+  // };
    
   return (
-    <SidebarContainer style={{ width: isOpen ? '250px' : '80px' }}>
-    <SidebarHeader>
-      <Logo src="../assets/bg1.png" alt="Logo" />
-    </SidebarHeader>
-    <SidebarNav>
-      <SidebarNavItem>
-        <SidebarIcon><BsGraphUp /></SidebarIcon>
-        <StyledLink to="/admin/dashboard">Dashboard</StyledLink>
-      </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsPeople /></SidebarIcon>
-          <StyledLink to="/admin/classes">Classes</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsPeople /></SidebarIcon>
-          <StyledLink to="/admin/students">Students</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsPerson /></SidebarIcon>
-          <StyledLink to="/admin/teachers">Teachers</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsFileText /></SidebarIcon>
-          <StyledLink to="/admin/assignments">Assignments</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsBook /></SidebarIcon>
-          <StyledLink to="/admin/exams">Exams</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsGraphDown /></SidebarIcon>
-          <StyledLink to="/admin/performance">Performance</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsCalendar /></SidebarIcon>
-          <StyledLink to="/admin/attendance">Attendance</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsBook /></SidebarIcon>
-          <StyledLink to="/admin/library">Library</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsChatDots /></SidebarIcon>
-          <StyledLink to="/admin/communication">Announcement</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsCalendarEvent /></SidebarIcon>
-          <StyledLink to="/admin/events">Events & Calendar</StyledLink>
-        </SidebarNavItem>
-        <SidebarNavItem>
-          <SidebarIcon><BsGear /></SidebarIcon>
-          <StyledLink to="/admin/settings">Settings & Profile</StyledLink>
-        </SidebarNavItem>
+    <SidebarContainer isOpen={isOpen}>
+      <SidebarHeader>
+        <Logo src="../assets/bg1.png" alt="Logo" />
+      </SidebarHeader>
+      <SidebarNavContainer>
+        <SidebarNav>
+          <SidebarNavItem>
+            <SidebarIcon><BsGraphUp /></SidebarIcon>
+            <StyledLink to="/admin/dashboard">Dashboard</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsPeople /></SidebarIcon>
+            <StyledLink to="/admin/classes">Classes</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsPeople /></SidebarIcon>
+            <StyledLink to="/admin/students">Students</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsPerson /></SidebarIcon>
+            <StyledLink to="/admin/teachers">Teachers</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsFileText /></SidebarIcon>
+            <StyledLink to="/admin/assignments">Assignments</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsBook /></SidebarIcon>
+            <StyledLink to="/admin/exams">Exams</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsGraphDown /></SidebarIcon>
+            <StyledLink to="/admin/performance">Performance</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsCalendar /></SidebarIcon>
+            <StyledLink to="/admin/attendance">Attendance</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsBook /></SidebarIcon>
+            <StyledLink to="/admin/library">Library</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsChatDots /></SidebarIcon>
+            <StyledLink to="/admin/communication">Announcement</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsCalendarEvent /></SidebarIcon>
+            <StyledLink to="/admin/events">Events & Calendar</StyledLink>
+          </SidebarNavItem>
+          <SidebarNavItem>
+            <SidebarIcon><BsGear /></SidebarIcon>
+            <StyledLink to="/admin/settings">Settings & Profile</StyledLink>
+          </SidebarNavItem>
         </SidebarNav>
-      <ToggleButton onClick={toggleSidebar}>
+      </SidebarNavContainer>
+      {/* <ToggleButton onClick={toggleSidebar}>
         <ToggleIcon isOpen={isOpen}>▲</ToggleIcon>
-      </ToggleButton>
+      </ToggleButton> */}
     </SidebarContainer>
   );
 };

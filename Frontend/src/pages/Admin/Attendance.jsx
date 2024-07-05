@@ -14,7 +14,7 @@ import {
   Divider,
   SubmitButton,
 } from '../../styles/AttendanceStyles';
-
+import Nav from '../../components/Navbar';
 const Attendance = () => {
   const [students, setStudents] = useState([]);
   const [attendanceData, setAttendanceData] = useState([]);
@@ -64,6 +64,8 @@ const Attendance = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <AttendanceContainer>
       <Sidebar />
       <Content>
@@ -107,6 +109,7 @@ const Attendance = () => {
         </AttendanceContent>
       </Content>
     </AttendanceContainer>
+    </>
   );
 };
 

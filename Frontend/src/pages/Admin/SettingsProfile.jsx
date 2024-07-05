@@ -11,7 +11,7 @@ import {
   ProfileInfo,
   EditButton,
 } from '../../styles/SettingsProfileStyles'; // Import styled components from SettingsProfileStyles.js
-
+import Nav from '../../components/Navbar';
 const SettingsProfile = () => {
   const teacherInfo = {
     name: 'John Doe',
@@ -22,6 +22,8 @@ const SettingsProfile = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <ProfileContainer>
       <SidebarContainer>
         <Sidebar />
@@ -43,6 +45,7 @@ const SettingsProfile = () => {
         <EditButton>Edit Profile</EditButton>
       </Content>
     </ProfileContainer>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ import {
   AddTeacherInput,
   AddTeacherButton,
 } from '../../styles/TeachersStyles'; // Import styled components from TeachersStyles.js
-
+import Nav from '../../components/Navbar';
 const Teachers = () => {
   const [newTeacher, setNewTeacher] = useState({ name: '', email: '', subject: '' });
   const [teachers, setTeachers] = useState([]);
@@ -46,6 +46,8 @@ const Teachers = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <TeachersContainer>
       <Sidebar />
       <Content>
@@ -80,6 +82,7 @@ const Teachers = () => {
         </TeachersContent>
       </Content>
     </TeachersContainer>
+    </>
   );
 };
 
