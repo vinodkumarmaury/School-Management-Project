@@ -19,11 +19,7 @@ const app = express();
 config({ path: "./config/config.env" });
 
 // Enable CORS
-app.use(cors({
-    origin: 'http://localhost:5173', // Allow requests from this origin
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allow these methods
-    allowedHeaders: ['Content-Type'], // Allow only certain headers
-}));
+app.use(cors());
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -1,15 +1,24 @@
 // StudentSignIn.js
 import React, { useState } from 'react';
+import axios from 'axios';
 import { StudentSignInContainer, FormContainer, InputField, SubmitButton } from '../styles/StudentSignInStyles';
 import Nav from './Navbar';
 const StudentSignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignIn = () => {
-    // For demonstration purposes, we'll directly navigate to the student dashboard route
+  const handleSignIn = async () => {
+    // For demonstration purposes, we'll directly navigate to the teacher dashboard route
     // Replace this with your actual sign-in logic
-    console.log('Student Sign In:', { email, password });
+    console.log(`${email} and ${password}`);
+    // verification and give a access token
+    // backend email and password send and return a access token
+    try {
+      const response = await axios.get('http://localhost:4000/api/v1/students/signin', {email:email,password: password});
+      console.log(response.data)
+    } catch (error) {
+      console.error('Error fetching announcements:', error);
+    }
   };
 
   return (

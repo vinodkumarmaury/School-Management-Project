@@ -19,6 +19,8 @@ const Students = () => {
     name: "",
     registrationNumber: "",
     grade: "",
+    email:"",
+    password:"",
   });
   const [students, setStudents] = useState([]);
 
@@ -41,6 +43,8 @@ const Students = () => {
     e.preventDefault();
     try {
       if (
+        newStudent.email.trim() === "" ||
+        newStudent.password.trim() === "" ||
         newStudent.name.trim() === "" ||
         newStudent.registrationNumber.trim() === "" ||
         newStudent.grade.trim() === ""
@@ -52,7 +56,7 @@ const Students = () => {
         newStudent
       );
       setStudents([...students, response.data.student]);
-      setNewStudent({ name: "", registrationNumber: "", grade: "" });
+      setNewStudent({ email:"",password:"", name: "", registrationNumber: "", grade: "" });
     } catch (error) {
       console.error("Error adding student:", error.message);
     }
@@ -67,6 +71,22 @@ const Students = () => {
           <StudentsContent>
             <StudentsHeader>Students</StudentsHeader>
             <AddStudentForm onSubmit={handleAddStudent}>
+            <AddStudentInput
+                type="text"
+                placeholder="Enter student email"
+                value={newStudent.email}
+                onChange={(e) =>
+                  setNewStudent({ ...newStudent, eamil: e.target.value })
+                }
+              />
+              <AddStudentInput
+                type="text"
+                placeholder="Enter student password"
+                value={newStudent.password}
+                onChange={(e) =>
+                  setNewStudent({ ...newStudent, password: e.target.value })
+                }
+              />
               <AddStudentInput
                 type="text"
                 placeholder="Enter student name"
@@ -100,7 +120,7 @@ const Students = () => {
               {students.map((student) => (
                 <StudentItem key={student._id}>
                   {student.name} - {student.registrationNumber} -{" "}
-                  {student.grade}
+                  {student.grade}-{student.email}-{student.password}
                 </StudentItem>
               ))}
             </StudentList>

@@ -6,7 +6,7 @@ import { TeachersContainer, Content, TeachersContent, TeachersHeader, TeacherLis
   AddTeacherButton } from '../../styles/TeachersStyles';
 import Nav from '../../components/Navbar';
 const TeacherSection = () => {
-  const [newTeacher, setNewTeacher] = useState({ name: '', email: '', subject: '' });
+  const [newTeacher, setNewTeacher] = useState({ name: '', email: '',password:'', subject: '' });
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
