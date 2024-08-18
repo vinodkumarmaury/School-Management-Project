@@ -9,7 +9,7 @@ export const createTeacher = async (req, res, next) => {
     if (!name || !email || !subject || !password) {
       return handleValidationError("Please Fill Full Form!", 400);
     }
-    
+     
     // Check if the teacher already exists
     const existingTeacher = await Teacher.findOne({ email });
     if (existingTeacher) {

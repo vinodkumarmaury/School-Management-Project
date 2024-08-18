@@ -72,11 +72,11 @@ const Students = () => {
             <StudentsHeader>Students</StudentsHeader>
             <AddStudentForm onSubmit={handleAddStudent}>
             <AddStudentInput
-                type="text"
+                type="email"
                 placeholder="Enter student email"
                 value={newStudent.email}
                 onChange={(e) =>
-                  setNewStudent({ ...newStudent, eamil: e.target.value })
+                  setNewStudent({ ...newStudent, email: e.target.value })
                 }
               />
               <AddStudentInput
@@ -119,10 +119,10 @@ const Students = () => {
             <StudentList>
               {students.map((student) => (
                 <StudentItem key={student._id}>
-                  {student.name} - {student.registrationNumber} -{" "}
+                  {student.name} - {student.registrationNumber}-
                   {student.grade}-{student.email}-{student.password}
                 </StudentItem>
-              ))}
+              ))} 
             </StudentList>
           </StudentsContent>
         </Content>

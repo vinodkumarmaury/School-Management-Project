@@ -3,7 +3,7 @@ import { AdminRegisterContainer, FormContainer, InputField, SubmitButton } from 
 import axios from 'axios';
 import Nav from "./Navbar";
 
-const AdminRegister = () => {
+const AdminRegister = () => { 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -20,7 +20,7 @@ const AdminRegister = () => {
     } catch (error) {
       console.error('Error during registration:', error);
     }
-  };
+  }; 
 
   return (
     <>

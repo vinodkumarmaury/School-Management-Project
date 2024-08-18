@@ -28,18 +28,18 @@ app.use((err, req, res, next) => {
 
 // Body parsing middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); 
 
 // API routes
-app.use("/api/v1/students", studentRouter);
+app.use("/api/v1/students", studentRouter); 
 app.use("/api/v1/teachers", teacherRouter);
 app.use("/api/v1/assignments", assignmentRouter);
 app.use("/api/v1/announcements", announcementRouter);
 app.use("/api/v1/class", classRouter); 
-app.use("/api/v1/library", libraryRouter);
+app.use("/api/v1/library", libraryRouter); 
 app.use("/api/v1/events", eventsRouter);
 app.use("/api/v1/exam", examRouter); 
-app.use("/api/v1/attendance", attendanceRouter);
+app.use("/api/v1/attendance", attendanceRouter); 
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/register", adminRegisterRouter);
 
